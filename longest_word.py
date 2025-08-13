@@ -1,4 +1,4 @@
-# longest word in a string
+# longest word in a string, in case of ties, take the later word
 
 
 def longest_word(sentence):
