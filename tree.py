@@ -20,6 +20,14 @@ def depth_first_values(root):
     return values
 
 
+def r_depth_first_values(root):
+    if root is None:
+        return []
+    left_values = r_depth_first_values(root.left)
+    right_values = r_depth_first_values(root.right)
+    return [root.val, *left_values, *right_values]
+
+
 a = Node("a")
 b = Node("b")
 c = Node("c")
@@ -38,5 +46,7 @@ c.right = f
 #  / \     \
 # d   e     f
 
-depth_first_values(a)
+# depth_first_values(a)
+res = r_depth_first_values(a)
+print(res)
 #   -> ['a', 'b', 'd', 'e', 'c', 'f']
