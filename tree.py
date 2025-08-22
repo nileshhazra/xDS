@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Node:
     def __init__(self, val):
         self.val = val
@@ -26,6 +29,26 @@ def r_depth_first_values(root):
     left_values = r_depth_first_values(root.left)
     right_values = r_depth_first_values(root.right)
     return [root.val, *left_values, *right_values]
+
+
+def breadth_first_values(root):
+    if root is None:
+        return []
+    values = []
+    # queue = [root]
+    queue = deque([root])
+    while queue:
+        # current = queue.pop(0) # because of this - TC - O(n^2)
+        current = queue.popleft()  # now it's O(n)
+        values.append(current.val)
+
+        if current.left:
+            queue.append(current.left)
+
+        if current.right:
+            queue.append(current.right)
+
+    return values
 
 
 a = Node("a")
