@@ -51,6 +51,47 @@ def breadth_first_values(root):
     return values
 
 
+def tree_includes(root, target):
+    if not root:
+        return False
+    stack = [root]
+    while stack:
+        curr = stack.pop()
+        if curr.val == target:
+            return True
+        if curr.left:
+            stack.append(curr.left)
+        if curr.right:
+            stack.append(curr.right)
+
+    return False
+
+
+def r_tree_includes(root, target):
+    if not root:
+        return False
+
+    if root.val == target:
+        return True
+
+    return tree_includes(root.left, target) or tree_includes(root.right, target)
+
+
+def tree_min_value(root):
+    min = float("inf")
+    queue = deque([root])
+    while queue:
+        curr = queue.popleft()
+        if curr.val < min:
+            min = curr.val
+        if curr.left:
+            queue.append(curr.left)
+        if curr.right:
+            queue.append(curr.right)
+
+    return min
+
+
 a = Node("a")
 b = Node("b")
 c = Node("c")
