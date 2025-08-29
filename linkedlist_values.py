@@ -29,4 +29,16 @@ def _linked_list_values(a, values):
     _linked_list_values(a.next, values)
 
 
+def reverse_list(a):
+    on = a
+    prev = None
+    while on != None:
+        temp = on.next
+        on.next = prev
+        prev = on
+        on = temp
+    return prev
+
+
 print(linked_list_values(a))  # -> [ 'a', 'b', 'c', 'd' ]
+print(reverse_list(a))
