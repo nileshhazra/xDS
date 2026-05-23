@@ -10,7 +10,6 @@
   <b>Minimal, readable Python implementations of classic data structure problems.</b>
 </p>
 
----
 
 ## Features
 
@@ -18,4 +17,3 @@
 - Clean code with comments
 - Easy to run and learn
 
----
