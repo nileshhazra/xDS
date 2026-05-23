@@ -19,11 +19,3 @@
 - Easy to run and learn
 
 ---
-
-## Usage
-
-```sh
-git clone https://github.com/yourusername/xDS.git
-cd xDS
-python is_prime.py # filename
-```
